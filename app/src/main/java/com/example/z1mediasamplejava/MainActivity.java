@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.rewarded_videoAd:
                 startActivity(new Intent(this, RewardedVideoActivity.class));
                 break;
+            case R.id.native_template_ad:
+                startActivity(new Intent(this, NativeTemplateAdActivity.class));
+                break;
 
         }
         return super.onOptionsItemSelected(item);
