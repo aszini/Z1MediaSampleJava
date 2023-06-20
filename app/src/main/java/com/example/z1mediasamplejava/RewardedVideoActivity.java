@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.z1mediasamplejava.databinding.ActivityRewardedVideoBinding;
+import com.z1media.android.sdk.BuildConfig;
 import com.z1media.android.sdk.Z1RewardedVideoAd;
 import com.z1media.android.sdk.listeners.Z1RewardedVideoI;
 
@@ -26,6 +27,7 @@ public class RewardedVideoActivity extends AppCompatActivity {
 
         Z1RewardedVideoAd rewardedVideoAd = new Z1RewardedVideoAd.Builder(this)
                 .setTagName("in-app-sample-rw-Z1")
+                .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setZ1RewardInterstitialI(new Z1RewardedVideoI() {
                     @Override
                     public void onUserEarnedReward(int amount, @NonNull String type) {

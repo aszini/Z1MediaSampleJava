@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.z1mediasamplejava.databinding.ActivityNativeTemplateAdBinding;
+import com.z1media.android.sdk.BuildConfig;
 import com.z1media.android.sdk.Z1NativeAd;
 import com.z1media.android.sdk.listeners.Z1NativeAdsI;
 import com.z1media.android.sdk.utils.Z1MediaAspectRatio;
@@ -51,6 +52,7 @@ public class NativeTemplateAdActivity extends AppCompatActivity {
         Z1NativeAd nativeAd = new Z1NativeAd.Builder(this)
                 .setTemplateView(binding.templateSmall)
                 .setTagName("in-app-sample-n-Z1")
+                .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setMediaAspectRatio(Z1MediaAspectRatio.PORTRAIT)
                 .setBackgroundColor(R.color.white)
                 .setNativeAdListener(new Z1NativeAdsI() {

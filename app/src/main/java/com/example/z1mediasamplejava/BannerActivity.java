@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.z1mediasamplejava.databinding.ActivityBannerBinding;
+import com.z1media.android.sdk.BuildConfig;
 import com.z1media.android.sdk.Z1BannerAd;
 import com.z1media.android.sdk.listeners.Z1BannerAdsI;
 import com.z1media.android.sdk.utils.Z1AdSize;
@@ -25,6 +26,7 @@ public class BannerActivity extends AppCompatActivity {
         Z1BannerAd z1BannerAd = new Z1BannerAd.Builder(this)
                 .setBannerView(binding.bannerAdsContainer)
                 .setTagName("in-app-sample-b-Z1")
+                .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setAddSize(Z1AdSize.BANNER)
                 .setZ1BannerAdListener(new Z1BannerAdsI() {
                     @Override
