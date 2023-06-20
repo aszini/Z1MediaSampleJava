@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.z1mediasamplejava.databinding.ActivityNativeTemplateAdBinding;
-import com.z1media.android.sdk.BuildConfig;
 import com.z1media.android.sdk.Z1NativeAd;
 import com.z1media.android.sdk.listeners.Z1NativeAdsI;
 import com.z1media.android.sdk.utils.Z1MediaAspectRatio;

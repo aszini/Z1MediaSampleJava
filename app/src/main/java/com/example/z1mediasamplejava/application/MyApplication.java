@@ -6,7 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.z1media.android.sdk.BuildConfig;
+import com.example.z1mediasamplejava.BuildConfig;
 import com.z1media.android.sdk.Z1AppOpenAd;
 import com.z1media.android.sdk.listeners.Z1AppOpenI;
 import com.z1media.android.sdk.manager.Z1MediaManager;
