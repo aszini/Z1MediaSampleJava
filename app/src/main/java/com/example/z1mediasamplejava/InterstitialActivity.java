@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.z1mediasamplejava.databinding.ActivityInterstitialAdBinding;
+import com.z1media.android.sdk.BuildConfig;
 import com.z1media.android.sdk.Z1InterstitialAd;
 import com.z1media.android.sdk.listeners.Z1AdManagerInterstitialI;
 
@@ -21,6 +22,7 @@ public class InterstitialActivity extends AppCompatActivity {
 
         Z1InterstitialAd interstitialAd =  new Z1InterstitialAd.Builder(this)
                 .setTagName("in-app-sample-in-Z1")
+                .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setZ1AdManagerInterstitialAdLoadCallback(new Z1AdManagerInterstitialI() {
                     @Override
                     public void onAdShowedFullScreenContent() {
