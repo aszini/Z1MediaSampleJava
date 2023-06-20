@@ -3,11 +3,13 @@ package com.example.z1mediasamplejava;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.z1mediasamplejava.databinding.ActivityInterstitialAdBinding;
 import com.z1media.android.sdk.Z1InterstitialAd;
 import com.z1media.android.sdk.listeners.Z1AdManagerInterstitialI;
+import com.z1media.android.sdk.utils.Z1AdError;
 
 public class InterstitialActivity extends AppCompatActivity {
 
@@ -22,26 +24,28 @@ public class InterstitialActivity extends AppCompatActivity {
         Z1InterstitialAd interstitialAd =  new Z1InterstitialAd.Builder(this)
                 .setTagName("in-app-sample-in-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
+                .setApplovinAdUnitId("6612297efccb6ca4") //sample ApplovinAdUnitId
                 .setZ1AdManagerInterstitialAdLoadCallback(new Z1AdManagerInterstitialI() {
+                    @Override
+                    public void onAdLoaded() {
+
+                    }
+
+                    @Override
+                    public void onAdFailedToShowFullScreenContent(@Nullable Z1AdError z1AdError) {
+
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@Nullable Z1AdError z1AdError) {
+
+                    }
+
                     @Override
                     public void onAdShowedFullScreenContent() {
 
                     }
 
-                    @Override
-                    public void onAdImpression() {
-
-                    }
-
-                    @Override
-                    public void onAdFailedToShowFullScreenContent(@NonNull String s) {
-
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull String s) {
-
-                    }
 
                     @Override
                     public void onAdDismissedFullScreenContent() {

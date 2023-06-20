@@ -3,14 +3,17 @@
 
 package com.example.z1mediasamplejava;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.z1mediasamplejava.databinding.ActivityRewardedVideoBinding;
 import com.z1media.android.sdk.Z1RewardedVideoAd;
 import com.z1media.android.sdk.listeners.Z1RewardedVideoI;
+import com.z1media.android.sdk.utils.Z1AdError;
 
 public class RewardedVideoActivity extends AppCompatActivity {
 
@@ -28,10 +31,10 @@ public class RewardedVideoActivity extends AppCompatActivity {
                 .setTagName("in-app-sample-rw-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setZ1RewardInterstitialI(new Z1RewardedVideoI() {
-                    @Override
-                    public void onUserEarnedReward(int amount, @NonNull String type) {
 
-                        binding.title.setText("Reward Amount "+ amount +", type: "+type);
+                    @Override
+                    public void onUserEarnedReward(int i, @NonNull String s) {
+                        binding.title.setText("Reward Amount "+ i +", type: "+s);
                     }
 
                     @Override
@@ -40,17 +43,17 @@ public class RewardedVideoActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdImpression() {
+                    public void onAdLoaded() {
 
                     }
 
                     @Override
-                    public void onAdFailedToShowFullScreenContent(@NonNull String s) {
+                    public void onAdFailedToShowFullScreenContent(@Nullable Z1AdError z1AdError) {
 
                     }
 
                     @Override
-                    public void onAdFailedToLoad(@NonNull String s) {
+                    public void onAdFailedToLoad(@Nullable Z1AdError z1AdError) {
 
                     }
 

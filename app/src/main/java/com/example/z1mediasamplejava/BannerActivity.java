@@ -3,11 +3,13 @@ package com.example.z1mediasamplejava;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.z1mediasamplejava.databinding.ActivityBannerBinding;
 import com.z1media.android.sdk.Z1BannerAd;
 import com.z1media.android.sdk.listeners.Z1BannerAdsI;
+import com.z1media.android.sdk.utils.Z1AdError;
 import com.z1media.android.sdk.utils.Z1AdSize;
 
 public class BannerActivity extends AppCompatActivity {
@@ -25,9 +27,12 @@ public class BannerActivity extends AppCompatActivity {
         Z1BannerAd z1BannerAd = new Z1BannerAd.Builder(this)
                 .setBannerView(binding.bannerAdsContainer)
                 .setTagName("in-app-sample-b-Z1")
+                .setApplovinAdUnitId("d166d2539686a150")  // sample ApplovinAdUnitId
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setAddSize(Z1AdSize.BANNER)
                 .setZ1BannerAdListener(new Z1BannerAdsI() {
+
+
                     @Override
                     public void onAdImpression() {
                         builder.append("Add impression \n");
@@ -41,11 +46,10 @@ public class BannerActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onAdFailedToLoad(@NonNull String s) {
-                        builder.append("Add failed to load \n");
-                        binding.textView.setText( builder.toString());
+                    public void onAdFailedToLoad(@Nullable Z1AdError z1AdError) {
+                        builder.append("Add Fail to load \n");
+                        binding.textView.setText( builder);
                     }
-
                     @Override
                     public void onAdClicked() {
                         builder.append("Add clicked \n");

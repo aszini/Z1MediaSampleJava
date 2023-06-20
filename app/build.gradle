@@ -1,5 +1,12 @@
 plugins {
     id 'com.android.application'
+    id 'applovin-quality-service'
+
+
+}
+applovin {
+    /* AD_REVIEW_KEY_HERE */
+    apiKey = "n6CQpJGDyBImJNItxm4lPKsu0FMX0UtrBloEfIcKRfFB2c8B9Kt9ya5UmtAUOkymqDxNr9ZmbcpxDzsagFLKTO"
 }
 
 android {
@@ -54,7 +61,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     // Gradle dependencies
-    implementation 'org.bitbucket.ozock:z1-android-sdk:1.1.4'
+    implementation 'org.bitbucket.ozock:z1-android-sdk:1.1.6'
     // TODO  add dependency com.google.android.gms:play-services-ads:21.5.0 if you are creating custom layout for native ad
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
 }
