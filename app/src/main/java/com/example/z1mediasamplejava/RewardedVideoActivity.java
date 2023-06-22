@@ -30,7 +30,7 @@ public class RewardedVideoActivity extends AppCompatActivity {
         Z1RewardedVideoAd rewardedVideoAd = new Z1RewardedVideoAd.Builder(this)
                 .setTagName("in-app-sample-rw-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setApplovinAdUnitId("df24933bfe0e0313") // sample ApplovinAdUnitIt
+                .setApplovinAdUnitId("df24933bfe0e0313") // sample ApplovinAdUnitId
                 .setZ1RewardInterstitialI(new Z1RewardedVideoI() {
 
                     @Override
