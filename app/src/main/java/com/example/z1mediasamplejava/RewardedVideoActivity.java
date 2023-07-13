@@ -10,14 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.z1mediasamplejava.application.MyApplication;
 import com.example.z1mediasamplejava.databinding.ActivityRewardedVideoBinding;
 import com.z1media.android.sdk.Z1RewardedVideoAd;
 import com.z1media.android.sdk.listeners.Z1RewardedVideoI;
-import com.z1media.android.sdk.utils.Z1AdError;
+import com.z1media.android.sdk.models.Z1AdError;
 
 public class RewardedVideoActivity extends AppCompatActivity {
 
     ActivityRewardedVideoBinding binding;
+
+    MyApplication application =new MyApplication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class RewardedVideoActivity extends AppCompatActivity {
                 .setTagName("in-app-sample-rw-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setApplovinAdUnitId("df24933bfe0e0313") // sample ApplovinAdUnitId
+                .setIronSourceParams(application.IRON_SOURCE_APP_KEY,"DefaultRewardedVideo")
                 .setZ1RewardInterstitialI(new Z1RewardedVideoI() {
 
                     @Override

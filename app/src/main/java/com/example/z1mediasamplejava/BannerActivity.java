@@ -6,14 +6,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.z1mediasamplejava.application.MyApplication;
 import com.example.z1mediasamplejava.databinding.ActivityBannerBinding;
 import com.z1media.android.sdk.Z1BannerAd;
 import com.z1media.android.sdk.listeners.Z1BannerAdsI;
-import com.z1media.android.sdk.utils.Z1AdError;
+import com.z1media.android.sdk.models.Z1AdError;
 import com.z1media.android.sdk.utils.Z1AdSize;
 
 public class BannerActivity extends AppCompatActivity {
-
+    MyApplication application =new MyApplication();
     ActivityBannerBinding binding;
     StringBuilder builder = new StringBuilder();
 
@@ -28,6 +29,7 @@ public class BannerActivity extends AppCompatActivity {
                 .setBannerView(binding.bannerAdsContainer)
                 .setTagName("in-app-sample-b-Z1")
                 .setApplovinAdUnitId("d166d2539686a150")  // sample ApplovinAdUnitId
+                .setIronSourceParams(application.IRON_SOURCE_APP_KEY,"DefaultBanner")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setAddSize(Z1AdSize.BANNER)
                 .setZ1BannerAdListener(new Z1BannerAdsI() {

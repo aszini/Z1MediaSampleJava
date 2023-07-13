@@ -6,14 +6,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.z1mediasamplejava.application.MyApplication;
 import com.example.z1mediasamplejava.databinding.ActivityInterstitialAdBinding;
 import com.z1media.android.sdk.Z1InterstitialAd;
 import com.z1media.android.sdk.listeners.Z1AdManagerInterstitialI;
-import com.z1media.android.sdk.utils.Z1AdError;
+import com.z1media.android.sdk.models.Z1AdError;
 
 public class InterstitialActivity extends AppCompatActivity {
 
     ActivityInterstitialAdBinding binding;
+
+    MyApplication application =new MyApplication();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class InterstitialActivity extends AppCompatActivity {
                 .setTagName("in-app-sample-in-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setApplovinAdUnitId("6612297efccb6ca4") //sample ApplovinAdUnitId
+                .setIronSourceParams(application.IRON_SOURCE_APP_KEY,"DefaultInterstitial")
                 .setZ1AdManagerInterstitialAdLoadCallback(new Z1AdManagerInterstitialI() {
                     @Override
                     public void onAdLoaded() {

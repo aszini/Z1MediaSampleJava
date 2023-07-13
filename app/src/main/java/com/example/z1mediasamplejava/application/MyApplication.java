@@ -11,11 +11,12 @@ import com.example.z1mediasamplejava.BuildConfig;
 import com.z1media.android.sdk.Z1AppOpenAd;
 import com.z1media.android.sdk.listeners.Z1AppOpenI;
 import com.z1media.android.sdk.manager.Z1MediaManager;
-import com.z1media.android.sdk.utils.Z1AdError;
+import com.z1media.android.sdk.models.Z1AdError;
 
 public class MyApplication extends Application {
 
     public Z1AppOpenAd appOpenAd;
+    public String IRON_SOURCE_APP_KEY ="85460dcd"; // sample app key
 
     @Override
     public void onCreate() {
@@ -26,6 +27,7 @@ public class MyApplication extends Application {
                 .setTagName("in-app-sample-ap-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setApplovinAdUnitId("795c516fd8fe194f") //sample applovinAdUnitId  --795c516fd8fe194f  (it is not necessary step)
+                .setIronSourceParams(IRON_SOURCE_APP_KEY,"DefaultOfferWall")
                 .setAppOpenListener(new Z1AppOpenI() {
 
                     @Override
