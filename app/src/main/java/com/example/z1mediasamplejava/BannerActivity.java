@@ -28,8 +28,6 @@ public class BannerActivity extends AppCompatActivity {
         Z1BannerAd z1BannerAd = new Z1BannerAd.Builder(this)
                 .setBannerView(binding.bannerAdsContainer)
                 .setTagName("in-app-sample-b-Z1")
-                .setApplovinAdUnitId("d166d2539686a150")  // sample ApplovinAdUnitId
-                .setIronSourceParams(application.IRON_SOURCE_APP_KEY,"DefaultBanner")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setAddSize(Z1AdSize.BANNER)
                 .setZ1BannerAdListener(new Z1BannerAdsI() {

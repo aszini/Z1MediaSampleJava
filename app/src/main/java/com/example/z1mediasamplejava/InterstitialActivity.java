@@ -27,8 +27,6 @@ public class InterstitialActivity extends AppCompatActivity {
         Z1InterstitialAd interstitialAd =  new Z1InterstitialAd.Builder(this)
                 .setTagName("in-app-sample-in-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setApplovinAdUnitId("6612297efccb6ca4") //sample ApplovinAdUnitId
-                .setIronSourceParams(application.IRON_SOURCE_APP_KEY,"DefaultInterstitial")
                 .setZ1AdManagerInterstitialAdLoadCallback(new Z1AdManagerInterstitialI() {
                     @Override
                     public void onAdLoaded() {

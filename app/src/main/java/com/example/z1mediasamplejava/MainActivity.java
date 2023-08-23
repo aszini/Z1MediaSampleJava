@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.native_template_ad:
                 startActivity(new Intent(this, NativeTemplateAdActivity.class));
                 break;
+            case R.id.rewarded_interstitial_ad:
+                startActivity(new Intent(this, RewardedInterstitialActivity.class));
+                break;
+
 
         }
         return super.onOptionsItemSelected(item);

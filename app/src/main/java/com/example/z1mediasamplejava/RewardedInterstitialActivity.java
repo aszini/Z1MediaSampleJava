@@ -1,40 +1,36 @@
-
-
-
 package com.example.z1mediasamplejava;
-
-import android.annotation.SuppressLint;
-import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.z1mediasamplejava.application.MyApplication;
+import android.os.Bundle;
+
 import com.example.z1mediasamplejava.databinding.ActivityRewardedVideoBinding;
+import com.example.z1mediasamplejava.databinding.ActivityRewardediBinding;
+import com.z1media.android.sdk.Z1RewardInterstitialAd;
 import com.z1media.android.sdk.Z1RewardedVideoAd;
+import com.z1media.android.sdk.listeners.Z1RewardInterstitialI;
 import com.z1media.android.sdk.listeners.Z1RewardedVideoI;
 import com.z1media.android.sdk.models.Z1AdError;
 
-public class RewardedVideoActivity extends AppCompatActivity {
+public class RewardedInterstitialActivity extends AppCompatActivity {
+    ActivityRewardediBinding binding;
 
-    ActivityRewardedVideoBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRewardedVideoBinding.inflate(getLayoutInflater());
+        binding = ActivityRewardediBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 
-
-        Z1RewardedVideoAd rewardedVideoAd = new Z1RewardedVideoAd.Builder(this)
+        Z1RewardInterstitialAd rewardedVideoAd = new Z1RewardInterstitialAd.Builder(this)
                 .setTagName("in-app-sample-rw-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setZ1RewardInterstitialI(new Z1RewardedVideoI() {
+                .setZ1RewardInterstitialI(new Z1RewardInterstitialI() {
 
                     @Override
                     public void onUserEarnedReward(int i, @NonNull String s) {
-                        binding.title.setText("Reward Amount "+ i +", type: "+s);
                     }
 
                     @Override
@@ -67,6 +63,6 @@ public class RewardedVideoActivity extends AppCompatActivity {
 
                     }
                 }).build();
-        rewardedVideoAd.loadRewardVideoAd();
+        rewardedVideoAd.loadRewardInterstitialAd();
     }
 }
