@@ -26,7 +26,7 @@ public class MyApplication extends Application {
         appOpenAd = new  Z1AppOpenAd.Builder(this)
                 .setTagName("in-app-sample-ap-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setAppOpenListener(new Z1AppOpenI() {
+                .setListener(new Z1AppOpenI() {
 
                     @Override
                     public void onAdLoaded() {

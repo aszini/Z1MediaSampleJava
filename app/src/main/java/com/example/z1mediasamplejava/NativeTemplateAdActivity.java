@@ -57,7 +57,7 @@ public class NativeTemplateAdActivity extends AppCompatActivity {
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setMediaAspectRatio(Z1MediaAspectRatio.PORTRAIT)
                 .setBackgroundColor(R.color.white)
-                .setNativeAdListener(new Z1NativeAdsI() {
+                .setListener(new Z1NativeAdsI() {
 
                     @Override
                     public void forNativeAd(@NonNull NativeAd nativeAd) {
@@ -103,7 +103,7 @@ public class NativeTemplateAdActivity extends AppCompatActivity {
                 .setTagName("in-app-sample-n-Z1")
                 .setMediaAspectRatio(Z1MediaAspectRatio.PORTRAIT)
                 .setBackgroundColor(R.color.white)
-                .setNativeAdListener(new Z1NativeAdsI() {
+                .setListener(new Z1NativeAdsI() {
 
                     @Override
                     public void forNativeAd(@NonNull NativeAd nativeAd) {
