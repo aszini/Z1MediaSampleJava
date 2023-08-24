@@ -30,8 +30,12 @@ public class BannerActivity extends AppCompatActivity {
                 .setTagName("in-app-sample-b-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
                 .setAddSize(Z1AdSize.BANNER)
-                .setZ1BannerAdListener(new Z1BannerAdsI() {
+                .setListener(new Z1BannerAdsI() {
 
+                    @Override
+                    public void onMediationSuccess() {
+
+                    }
 
                     @Override
                     public void onAdImpression() {

@@ -27,7 +27,12 @@ public class InterstitialActivity extends AppCompatActivity {
         Z1InterstitialAd interstitialAd =  new Z1InterstitialAd.Builder(this)
                 .setTagName("in-app-sample-in-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setZ1AdManagerInterstitialAdLoadCallback(new Z1AdManagerInterstitialI() {
+                .setListener(new Z1AdManagerInterstitialI() {
+                    @Override
+                    public void onAdImpression() {
+
+                    }
+
                     @Override
                     public void onAdLoaded() {
 

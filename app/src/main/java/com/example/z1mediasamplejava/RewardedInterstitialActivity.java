@@ -27,7 +27,12 @@ public class RewardedInterstitialActivity extends AppCompatActivity {
         Z1RewardInterstitialAd rewardedVideoAd = new Z1RewardInterstitialAd.Builder(this)
                 .setTagName("in-app-sample-rw-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setZ1RewardInterstitialI(new Z1RewardInterstitialI() {
+                .setListener(new Z1RewardInterstitialI() {
+
+                    @Override
+                    public void onAdImpression() {
+
+                    }
 
                     @Override
                     public void onUserEarnedReward(int i, @NonNull String s) {

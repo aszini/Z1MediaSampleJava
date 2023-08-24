@@ -30,7 +30,12 @@ public class RewardedVideoActivity extends AppCompatActivity {
         Z1RewardedVideoAd rewardedVideoAd = new Z1RewardedVideoAd.Builder(this)
                 .setTagName("in-app-sample-rw-Z1")
                 .setEnvironment(BuildConfig.BUILD_TYPE)
-                .setZ1RewardInterstitialI(new Z1RewardedVideoI() {
+                .setListener(new Z1RewardedVideoI() {
+
+                    @Override
+                    public void onAdImpression() {
+
+                    }
 
                     @Override
                     public void onUserEarnedReward(int i, @NonNull String s) {
